@@ -11,10 +11,12 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
 import { ParquetData } from "@/lib/types";
+import DownloadButton from "./DownloadButton";
 
 interface ParquetTableProps {
   data?: ParquetData;
   isLoading: boolean;
+  fileId?: string;
   onPageChange?: (page: number) => void;
   onPageSizeChange?: (pageSize: number) => void;
 }
@@ -22,6 +24,7 @@ interface ParquetTableProps {
 const ParquetTable = ({ 
   data, 
   isLoading, 
+  fileId,
   onPageChange,
   onPageSizeChange
 }: ParquetTableProps) => {
@@ -79,6 +82,7 @@ const ParquetTable = ({
         <div className="flex justify-between items-center">
           <CardTitle>Data</CardTitle>
           <div className="flex items-center space-x-2">
+            {fileId && <DownloadButton fileId={fileId} />}
             <span className="text-xs text-muted-foreground">
               Rows per page:
             </span>

@@ -136,6 +136,7 @@ const ViewFile = () => {
             <ParquetTable 
               data={tableData} 
               isLoading={isLoadingData}
+              fileId={id}
               onPageChange={handlePageChange}
               onPageSizeChange={handlePageSizeChange}
             />
