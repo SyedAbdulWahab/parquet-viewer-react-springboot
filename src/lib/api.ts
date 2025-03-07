@@ -1,6 +1,6 @@
 import { ParquetFile, ParquetMetadata, ParquetData, ParquetColumn, ApiResponse } from "@/lib/types";
 
-const API_BASE_URL = '/api'; // This will be proxied to your Spring Boot backend
+const API_BASE_URL = 'http://localhost:8080/api'; // This will be proxied to your Spring Boot backend
 
 /**
  * Fetches all parquet files from the server

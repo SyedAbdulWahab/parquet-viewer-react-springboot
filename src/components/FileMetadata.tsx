@@ -1,4 +1,3 @@
-
 import { ParquetMetadata } from "@/lib/types";
 import { formatFileSize, formatDate } from "@/lib/api";
 import { 
@@ -50,11 +49,15 @@ const FileMetadata = ({ metadata, isLoading }: FileMetadataProps) => {
   return (
     <Card className="w-full animate-in fade-in">
       <CardHeader className="pb-3">
-        <div className="flex items-center space-x-2">
-          <FileText className="h-5 w-5 text-primary" />
-          <CardTitle>{metadata.name}</CardTitle>
+        <div className="flex items-center">
+          <FileText className="h-5 w-5 text-primary mr-2 flex-shrink-0" />
+          <CardTitle className="truncate text-lg" style={{ width: "calc(100% - 30px)" }}>
+            {metadata.name}
+          </CardTitle>
         </div>
-        <CardDescription>{metadata.path}</CardDescription>
+        <CardDescription className="truncate mt-1 text-sm">
+          {metadata.path}
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <Tabs defaultValue="overview">
